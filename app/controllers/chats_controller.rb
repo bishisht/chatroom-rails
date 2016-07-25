@@ -4,6 +4,7 @@ class ChatsController < ApplicationController
   # GET /chats
   # GET /chats.json
   def index
+    @chat = Chat.new
     @chats = Chat.all
   end
 
@@ -14,12 +15,12 @@ class ChatsController < ApplicationController
 
   # GET /chats/new
   def new
-    @chat = Chat.new
+    @chats = Chat.all
   end
 
   # GET /chats/1/edit
-  def edit
-  end
+  # def edit
+  # end
 
   # POST /chats
   # POST /chats.json
@@ -28,7 +29,7 @@ class ChatsController < ApplicationController
 
     respond_to do |format|
       if @chat.save
-        format.html { redirect_to @chat, notice: 'Chat was successfully created.' }
+        format.html { redirect_to chats_path, notice: 'Message was successfully posted.' }
         format.json { render :show, status: :created, location: @chat }
       else
         format.html { render :new }
@@ -39,17 +40,17 @@ class ChatsController < ApplicationController
 
   # PATCH/PUT /chats/1
   # PATCH/PUT /chats/1.json
-  def update
-    respond_to do |format|
-      if @chat.update(chat_params)
-        format.html { redirect_to @chat, notice: 'Chat was successfully updated.' }
-        format.json { render :show, status: :ok, location: @chat }
-      else
-        format.html { render :edit }
-        format.json { render json: @chat.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  # def update
+  #   respond_to do |format|
+  #     if @chat.update(chat_params)
+  #       format.html { redirect_to @chat, notice: 'Chat was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @chat }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @chat.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
 
   # DELETE /chats/1
   # DELETE /chats/1.json

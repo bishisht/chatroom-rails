@@ -1,29 +1,16 @@
+
+<h1 class="center">All Chats</h1>
+<!--<iframe src="<%= new_chat_path %>" width="100%" height="100%"></iframe>-->
+<% @chats.each do |chat| %>
+<p>
+  <hr />
+<p><h6><%= chat.name %> said:</h6> <%= chat.message %></p>  
+</p>
+<hr />
+<% end %>
+<br>
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Chats</h1>
+<%= render 'form' %>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Message</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @chats.each do |chat| %>
-      <tr>
-        <td><%= chat.name %></td>
-        <td><%= chat.message %></td>
-        <td><%= link_to 'Show', chat %></td>
-        <td><%= link_to 'Edit', edit_chat_path(chat) %></td>
-        <td><%= link_to 'Destroy', chat, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New Chat', new_chat_path %>
+<%= link_to 'Post New Message', new_chat_path %>
