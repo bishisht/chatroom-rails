@@ -9,6 +9,8 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'materialize-sass'
+gem 'client_side_validations'
+
 
 group :development, :test do
   gem 'byebug'

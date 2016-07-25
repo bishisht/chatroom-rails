@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require rails.validations
 //= require materialize-sprockets
 //= require jquery_ujs
 //= require turbolinks
