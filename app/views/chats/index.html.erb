@@ -1,16 +1,24 @@
-
-<h1 class="center">All Chats</h1>
-<!--<iframe src="<%= new_chat_path %>" width="100%" height="100%"></iframe>-->
+<div class="row">
+  <h1 class="center">MNR Public Chat</h1>
+  <div class="col s6">
 <% @chats.each do |chat| %>
 <p>
-  <hr />
-<p><h6><%= chat.name %> said:</h6> <%= chat.message %></p>  
+<p><h6><%= chat.name %> said:</h6> <%= chat.message %> at <%= chat.created_at %></p>  
 </p>
 <hr />
-<% end %>
-<br>
-<p id="notice"><%= notice %></p>
+<% end %>    
+  </div>
+  
+  <div class="col s6">
 
 <%= render 'form' %>
+<p id="notice"><%= notice %></p>    
+  </div>
+</div>
 
-<%= link_to 'Post New Message', new_chat_path %>
+
+
+
+
+<br>
+

@@ -5,7 +5,7 @@ class ChatsController < ApplicationController
   # GET /chats.json
   def index
     @chat = Chat.new
-    @chats = Chat.all
+    @chats = Chat.all.order(created_at: :desc)
   end
 
   # GET /chats/1
@@ -29,7 +29,7 @@ class ChatsController < ApplicationController
 
     respond_to do |format|
       if @chat.save
-        format.html { redirect_to chats_path, notice: 'Message was successfully posted.' }
+        format.html { redirect_to root_path, notice: 'Message was successfully posted.' }
         format.json { render :show, status: :created, location: @chat }
       else
         format.html { render :new }
